@@ -3,9 +3,9 @@
   connection:local
 
 vars:
- ami_id:
- sg_id:
- zone_id:
+ ami_id: "ami-09c813fb71547fc4f"
+ sg_id: "sg-0338b6c26e88f5d75"
+ zone_id: "Z09725051OXQ4HS6KAP4"
  domain_name: "gdaws86s.fun"
 
 instances:
