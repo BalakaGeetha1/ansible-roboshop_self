@@ -10,7 +10,7 @@
 #         name: httpd
 #         state: present
 
-- name: Create EC2 and r53
+- name: create ec2 and r53
   hosts: local
   connection: local
 
