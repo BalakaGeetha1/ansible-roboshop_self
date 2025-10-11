@@ -10,16 +10,16 @@
 #         name: httpd
 #         state: present
 
-- name: create ec2 and r53
-  hosts: local
-  connection: local
+ - name: create ec2 and r53
+   hosts: local
+   connection: local
 
-  vars:
+   vars:
     ami_id: ami-09c813fb71547fc4f
     sg_id: sg-0338b6c26e88f5d75
     zone_id: Z09725051OXQ4HS6KAP4
     domain_name: "gdaws86s.fun"
-  instances:
+   instances:
      -mongodb
      -redis
     # -mysql
@@ -39,18 +39,18 @@
   #     ansible.builtin.debug:
   #         msg: "{{ec2_output}}"
 
-  tasks:
-    - name: Create EC2 instance
-      amazon.aws.ec2_instance:
-        name: "{{ item }}"
-        instance_type: t3.micro
-        security_group: "{{ sg_id }}"
-        image_id: "{{ ami_id }}"
-        tags:
-          Name: "{{ item }}"
-      loop: "{{ instances }}"
-      register: ec2_output
+   tasks:
+     - name: Create EC2 instance
+       amazon.aws.ec2_instance:
+         name: "{{ item }}"
+         instance_type: t3.micro
+         security_group: "{{ sg_id }}"
+         image_id: "{{ ami_id }}"
+         tags:
+           Name: "{{ item }}"
+       loop: "{{ instances }}"
+       register: ec2_output
 
-    - name: Print the EC2 output
-      ansible.builtin.debug:
-        var: ec2_output
+     - name: Print the EC2 output
+       ansible.builtin.debug:
+         var: ec2_output
