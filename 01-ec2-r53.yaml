@@ -19,12 +19,11 @@
     sg_id: sg-0338b6c26e88f5d75
     zone_id: Z09725051OXQ4HS6KAP4
     domain_name: "gdaws86s.fun"
-    instances:
+  instances:
      -mongodb
      -redis
     # -mysql
     # -rabbitmq
-
   # tasks:
   #   - name: create ec2 instance
   #     amazon.ec2.aws.instance:
