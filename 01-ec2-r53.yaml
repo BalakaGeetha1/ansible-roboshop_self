@@ -21,7 +21,7 @@
     domain_name: "gdaws86s.fun"
     instances:
      -mongodb
-    # -redis
+     -redis
     # -mysql
     # -rabbitmq
 
