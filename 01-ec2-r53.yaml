@@ -1,20 +1,20 @@
-  -name: Create EC2 and r53
-    hosts:local
-    connection:local
+-name: Create EC2 and r53
+  hosts:local
+  connection:local
 
-  vars:
+vars:
   ami_id: "ami-09c813fb71547fc4f"
   sg_id: "sg-0338b6c26e88f5d75"
   zone_id: "Z09725051OXQ4HS6KAP4"
   domain_name: "gdaws86s.fun"
 
-  instances:
+instances:
     -mongodb
     # -redis
     # -mysql
     # -rabbitmq
 
-  tasks:
+tasks:
     -name: Create ec2 instance
     amazon.ec2.aws.instance:
     name: "{{item}}"
