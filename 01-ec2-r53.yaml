@@ -36,6 +36,6 @@
          Name: "{{item}}"
          loop: "{{instances}}"
 
-    - name: Print the ec2-output
-      ansible.builtin.debug:
-       msg: "{{ec2_output}}"
+      - name: Print the ec2-output
+        ansible.builtin.debug:
+          msg: "{{ec2_output}}"
