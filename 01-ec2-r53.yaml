@@ -8,8 +8,8 @@
     domain_name: "gdaws86s.fun"
     instances:
       -mongodb
-      -redis
-      -mysql
+      # -redis
+      # -mysql
  
   tasks:
     - name: Create EC2 instance
